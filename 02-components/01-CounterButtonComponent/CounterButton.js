@@ -8,7 +8,12 @@ export default defineComponent({
   emits: ['update:count'],
   // Компонент должен иметь входной параметр
 
-  // Шаблон лучше держать максимально простым, а логику выносить в методы
+  methods: {
+    increment() {
+      // При клике на кнопку порождаем событие и отправляем новое значение
+      this.$emit('update:count', this.count + 1);
+    },
+  },
 
   // Шаблон потребуется отредактировать
   template: `<button type="button"

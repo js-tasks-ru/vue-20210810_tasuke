@@ -11,7 +11,11 @@ export default defineComponent({
 
   computed: {
     localDate() {
-      return new Date(this.date).toLocaleDateString(navigator.language);
+      return new Date(this.date).toLocaleDateString(navigator.language, {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+      });
     },
   },
 

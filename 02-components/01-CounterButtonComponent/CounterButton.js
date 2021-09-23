@@ -3,7 +3,10 @@ import { defineComponent } from './vendor/vue.esm-browser.js';
 export default defineComponent({
   name: 'CounterButton',
   props: {
-    count: Number,
+    count: {
+      type: Number,
+      default: 0,
+    },
   },
   emits: ['update:count'],
   // Компонент должен иметь входной параметр
